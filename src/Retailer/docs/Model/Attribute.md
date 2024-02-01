@@ -1,0 +1,10 @@
+# # Attribute
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** | The identifier of the attribute for which the value has changed. |
+**values** | [**\ThisIsDevelopment\OpenApi\Bol\Retailer\Models\AttributeValue[]**](AttributeValue.md) |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
