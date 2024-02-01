@@ -1,0 +1,13 @@
+# # FilterRanges
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**rangeId** | **string** | The id of the range filter product can be found under. |
+**rangeName** | **string** | The name of the range filter product can be found under. |
+**min** | **float** | The minimum value for the range that can be used to filter results. |
+**max** | **float** | The maximum value for the range that can be used to filter results. |
+**unit** | **string** | The unit that applies to the min and max range values. |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
