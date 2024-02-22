@@ -235,77 +235,6 @@ class ChangeTransportRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return self::$openAPIModelName;
     }
 
-    public const TRANSPORTER_CODE_AMPERE = 'AMPERE';
-    public const TRANSPORTER_CODE_BPOST_BE = 'BPOST_BE';
-    public const TRANSPORTER_CODE_BPOST_BRIEF = 'BPOST_BRIEF';
-    public const TRANSPORTER_CODE_BRIEFPOST = 'BRIEFPOST';
-    public const TRANSPORTER_CODE_BUDBEE = 'BUDBEE';
-    public const TRANSPORTER_CODE_COURIER = 'COURIER';
-    public const TRANSPORTER_CODE_CYCLOON = 'CYCLOON';
-    public const TRANSPORTER_CODE_DHL = 'DHL';
-    public const TRANSPORTER_CODE_DHL_GLOBAL_MAIL = 'DHL-GLOBAL-MAIL';
-    public const TRANSPORTER_CODE_DHL_SD = 'DHL-SD';
-    public const TRANSPORTER_CODE_DHLFORYOU = 'DHLFORYOU';
-    public const TRANSPORTER_CODE_DHL_DE = 'DHL_DE';
-    public const TRANSPORTER_CODE_DPD_BE = 'DPD-BE';
-    public const TRANSPORTER_CODE_DPD_NL = 'DPD-NL';
-    public const TRANSPORTER_CODE_DYL = 'DYL';
-    public const TRANSPORTER_CODE_FEDEX_BE = 'FEDEX_BE';
-    public const TRANSPORTER_CODE_FEDEX_NL = 'FEDEX_NL';
-    public const TRANSPORTER_CODE_GLS = 'GLS';
-    public const TRANSPORTER_CODE_OTHER = 'OTHER';
-    public const TRANSPORTER_CODE_PACKS = 'PACKS';
-    public const TRANSPORTER_CODE_PARCEL_NL = 'PARCEL-NL';
-    public const TRANSPORTER_CODE_PES = 'PES';
-    public const TRANSPORTER_CODE_TNT = 'TNT';
-    public const TRANSPORTER_CODE_TNT_EXPRESS = 'TNT-EXPRESS';
-    public const TRANSPORTER_CODE_TNT_EXTRA = 'TNT-EXTRA';
-    public const TRANSPORTER_CODE_TNT_BRIEF = 'TNT_BRIEF';
-    public const TRANSPORTER_CODE_TRANSMISSION = 'TRANSMISSION';
-    public const TRANSPORTER_CODE_TRUNKRS = 'TRUNKRS';
-    public const TRANSPORTER_CODE_TSN = 'TSN';
-    public const TRANSPORTER_CODE_UPS = 'UPS';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTransporterCodeAllowableValues()
-    {
-        return [
-            self::TRANSPORTER_CODE_AMPERE,
-            self::TRANSPORTER_CODE_BPOST_BE,
-            self::TRANSPORTER_CODE_BPOST_BRIEF,
-            self::TRANSPORTER_CODE_BRIEFPOST,
-            self::TRANSPORTER_CODE_BUDBEE,
-            self::TRANSPORTER_CODE_COURIER,
-            self::TRANSPORTER_CODE_CYCLOON,
-            self::TRANSPORTER_CODE_DHL,
-            self::TRANSPORTER_CODE_DHL_GLOBAL_MAIL,
-            self::TRANSPORTER_CODE_DHL_SD,
-            self::TRANSPORTER_CODE_DHLFORYOU,
-            self::TRANSPORTER_CODE_DHL_DE,
-            self::TRANSPORTER_CODE_DPD_BE,
-            self::TRANSPORTER_CODE_DPD_NL,
-            self::TRANSPORTER_CODE_DYL,
-            self::TRANSPORTER_CODE_FEDEX_BE,
-            self::TRANSPORTER_CODE_FEDEX_NL,
-            self::TRANSPORTER_CODE_GLS,
-            self::TRANSPORTER_CODE_OTHER,
-            self::TRANSPORTER_CODE_PACKS,
-            self::TRANSPORTER_CODE_PARCEL_NL,
-            self::TRANSPORTER_CODE_PES,
-            self::TRANSPORTER_CODE_TNT,
-            self::TRANSPORTER_CODE_TNT_EXPRESS,
-            self::TRANSPORTER_CODE_TNT_EXTRA,
-            self::TRANSPORTER_CODE_TNT_BRIEF,
-            self::TRANSPORTER_CODE_TRANSMISSION,
-            self::TRANSPORTER_CODE_TRUNKRS,
-            self::TRANSPORTER_CODE_TSN,
-            self::TRANSPORTER_CODE_UPS,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -353,15 +282,6 @@ class ChangeTransportRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getTransporterCodeAllowableValues();
-        if (!is_null($this->container['transporterCode']) && !in_array($this->container['transporterCode'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'transporterCode', must be one of '%s'",
-                $this->container['transporterCode'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['trackAndTrace'] === null) {
             $invalidProperties[] = "'trackAndTrace' can't be null";
         }
@@ -393,7 +313,7 @@ class ChangeTransportRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets transporterCode
      *
-     * @param string|null $transporterCode transporterCode
+     * @param string|null $transporterCode Specify the transporter that carries out the shipment.
      *
      * @return self
      */
@@ -401,16 +321,6 @@ class ChangeTransportRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         if (is_null($transporterCode)) {
             throw new \InvalidArgumentException('non-nullable transporterCode cannot be null');
-        }
-        $allowedValues = $this->getTransporterCodeAllowableValues();
-        if (!in_array($transporterCode, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'transporterCode', must be one of '%s'",
-                    $transporterCode,
-                    implode("', '", $allowedValues)
-                )
-            );
         }
         $this->container['transporterCode'] = $transporterCode;
 

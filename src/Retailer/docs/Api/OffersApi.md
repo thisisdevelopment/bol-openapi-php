@@ -190,7 +190,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/vnd.retailer.v10+csv`
+- **Accept**: `application/vnd.retailer.v10+csv`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -250,7 +250,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/vnd.retailer.v10+csv`
+- **Accept**: `application/vnd.retailer.v10+csv`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -1166,7 +1166,7 @@ class OffersApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/vnd.retailer.v10+csv', ],
+            ['application/vnd.retailer.v10+csv', ],
             $contentType,
             $multipart
         );
@@ -1547,7 +1547,7 @@ class OffersApi
 
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', 'application/vnd.retailer.v10+csv', ],
+            ['application/vnd.retailer.v10+csv', ],
             $contentType,
             $multipart
         );

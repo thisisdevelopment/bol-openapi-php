@@ -20,6 +20,8 @@ RESPONSES=(
     '.paths."/retailer/offers/unpublished/{report-id}".get.responses."200"'
 )
 
+CONTENT_TYPE="application/vnd.retailer.v10+csv"
+
 for path in "${RESPONSES[@]}"
 do
     echo "Processing '$path'"
@@ -42,7 +44,7 @@ do
     echo -n "Patching... "
     TMP=$(mktemp)
 
-    cat $WORKING_FILE | jq "${path}.content.\"application/json\".schema = {\"type\": \"file\" }" > $TMP
+    cat $WORKING_FILE | jq "${path}.content.\"${CONTENT_TYPE}\".schema = {\"type\": \"file\" }" > $TMP
     if [ $? != 0 ]; then
         echo "NOK"
         exit 1
